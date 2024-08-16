@@ -1,0 +1,26 @@
+<h3>List of heroes</h3>
+
+<div *ngIf="lastHeroDeleted; else nothingWasDeleted " class="alert alert-success">
+  <strong>Hero deleted:</strong> {{ lastHeroDeleted }}
+</div>
+
+<div *ngIf="lastHeroAdded " class="alert alert-success">
+  <strong>Hero added:</strong> {{ lastHeroAdded }}
+</div>
+
+
+<ng-template #nothingWasDeleted>
+  <h3>No a borrado nada</h3>
+</ng-template>
+
+
+<button class="button" (click)="addHero()">Add Hero</button>
+
+<button *ngIf="heroNames.length > 0" class="button" (click)="removeHero()">Remove Hero</button>
+
+<ul class="list-group">
+  <li *ngFor="let hero of heroNames" class="list-group list-group-item">
+    <a class=" accordion-item">
+      {{ hero }}
+    </a>
+  </li>

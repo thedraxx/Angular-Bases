@@ -1,0 +1,27 @@
+<h1 class="display-4">{{name}}</h1>
+
+<dl class="dl-horizontal">
+  <dt class="col-sm-3">Nombre:</dt>
+  <dd class="col-sm-9">{{name}} </dd>
+
+  <dt class="col-sm-3">Edad:</dt>
+  <dd class="col-sm-9">{{age}} </dd>
+
+  <dt class="col-sm-3">Metodo:</dt>
+  <dd class="col-sm-9">{{getHeroDescription()}} </dd>
+
+  <dt class="col-sm-3">Capitalizado:</dt>
+  <dd class="col-sm-9">{{nameCapitalized}} </dd>
+</dl>
+
+<button *ngIf="name !== 'spiderman' " class="button " (click)="changeHeroName()">
+  Cambiar Nombre
+</button>
+
+<button *ngIf="age == 45 " class="button " (click)="changeHeroAge()">
+  Cambiar Edad
+</button>
+
+<button class="button " (click)="resetForm()">
+  resetForm
+</button>

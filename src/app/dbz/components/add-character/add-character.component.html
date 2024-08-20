@@ -1,0 +1,14 @@
+<h4>LISTADO</h4>
+
+
+<form class="row" (ngSubmit)="emitCharacter()">
+
+  <input name="name" type="text" class="form-control mb-2" placeholder="Nombre" [(ngModel)]="character.name">
+
+  <input name="power" type="number" class="form-control mb-2" placeholder="Poder" [(ngModel)]="character.power">
+  <button class="btn btn-primary mt-2" type="submit">Agregar</button>
+
+</form>
+
+
+<!-- {{character | json}} -->

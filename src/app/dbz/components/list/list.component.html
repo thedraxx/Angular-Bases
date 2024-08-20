@@ -1,0 +1,25 @@
+<h4>LISTADO</h4>
+<hr>
+<ul class="list-group">
+
+
+  <li *ngFor="let character of characterList;
+  let i = index;
+  let isFirst = first;
+  let isLast = last;
+  let iseven = even;
+  let isOdd = odd;" class="list-group-item d-flex justify-content-between"
+    [ngClass]="{'list-group-item-success': isOdd, 'list-group-item-primary': iseven }">
+
+
+    <span class="text-primary">{{i}}.</span>
+    <span>{{character.name}} - </span>
+    <strong>{{character.power }} unidades</strong>
+    <button (click)="onDeleteCharacter(character.id.toString())" class="btn btn-danger">Borrar</button>
+
+    <!-- <span>Es el primero: {{isFirst}} </span>
+    <span>Es el ultimo: {{isLast}} </span>
+    <span>Es par: {{iseven}} </span>
+    <span>Es impar: {{isOdd}} </span> -->
+  </li>
+</ul>
